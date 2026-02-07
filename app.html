@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon App DevOps</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bienvenue sur mon App DevOps</h1>
+  </header>
+  <main>
+    <p>Cette application HTML/CSS est prête pour CI/CD avec GitHub Actions et Vercel.</p>
+    <button id="clickBtn">Clique-moi !</button>
+    <p id="output"></p>
+  </main>
+  <script>
+    document.getElementById("clickBtn").addEventListener("click", () => {
+      document.getElementById("output").textContent = "Pipeline CI/CD simulé ! 🚀";
+    });
+  </script>
+</body>
+</html>

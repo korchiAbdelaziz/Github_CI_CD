@@ -1,0 +1,29 @@
+name: CI Simulation
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Build simulation
+        run: echo "✅ Build simulé : HTML/CSS prêt"
+
+      - name: Test simulation
+        run: |
+          echo "✅ Test simulé : vérifier que index.html et style.css existent"
+          if [ ! -f index.html ] || [ ! -f style.css ]; then
+            echo "❌ Fichiers manquants"
+            exit 1
+          fi
+          echo "✅ Tests OK"
