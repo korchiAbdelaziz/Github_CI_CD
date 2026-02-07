@@ -1,0 +1,30 @@
+name: Python CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Étape 1 : récupérer le code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Étape 2 : config Python
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # Étape 3 : installer pytest (optionnel ici)
+      - name: Install dependencies
+        run: pip install pytest
+
+      # Étape 4 : lancer les tests
+      - name: Run tests
+        run: python app.py
